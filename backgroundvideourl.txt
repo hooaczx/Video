@@ -1,0 +1,9 @@
+return function(iconvideo, iconvideourl)
+   if not isfile("video.mp4") then
+       writefile("video.mp4", game:HttpGet(iconvideourl))
+   elseif readfile("video.mp4") ~= game:HttpGet(iconvideourl) then
+       writefile("video.mp4", game:HttpGet(iconvideourl))
+   end
+   iconvideo.Video = getcustomasset("video.mp4")
+   iconvideo:Play()
+end
